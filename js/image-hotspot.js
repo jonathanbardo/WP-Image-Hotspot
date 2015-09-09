@@ -32,11 +32,12 @@
             );
 
             // Put listeners on the save button
-            imageEdit.open.apply( this, arguments );
+            return imageEdit.open.apply( this, arguments );
         },
 
         close: function() {
             var t = window.hotspot;
+
             t.hotspotRemoveListener();
 
             $( document ).off( 'click', t.btnClass );
@@ -64,13 +65,16 @@
                             $( '#imgedit-response-' + postid ).html('<div class="updated"><p>' + rsp.data.msg + '</p></div>');
 
                             if ( window.imageEdit._view ) {
+                                // Remove listener for the embed view
+                                t.hotspotRemoveListener();
+                                $( document ).off( 'click', t.btnClass );
                                 window.imageEdit._view.save();
                             } else {
                                 window.imageEdit.close( postid );
                             }
                         } else {
                             $( '#imgedit-response-' + postid ).html( '<div class="error"><p>' + rsp.data.msg + '</p></div>' );
-                            imageEdit.close( postid );
+                            window.imageEdit.close( postid );
                             return;
                         }
                     },
