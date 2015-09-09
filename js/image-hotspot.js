@@ -1,7 +1,7 @@
 /* global imagehotspot, jQuery */
 (function( $ ){
 
-	'use strict';
+    'use strict';
 
     var imageEdit        = $.extend({}, window.imageEdit);
     var pointerDismissed = false;
@@ -145,11 +145,12 @@
                     if ( ! pointerDismissed ) {
                         $( t.btnClass )
                             .first()
-                            .addClass('dismissed')
                             .pointer( pointerOptions )
                             .pointer( 'open' );
-                    }
 
+                        // Pointer don't show on media modal otherwise
+                        $( t.btnClass ).first().pointer( 'instance').pointer.css( {zIndex: 170000} );
+                    }
                 }, 50 );
             }
 
@@ -227,7 +228,7 @@
 
         hotspotAdd: function( hotspot ) {
             var t = window.hotspot,
-				hotspotWidth = 40;
+                hotspotWidth = 40;
 
             hotspot = $.extend( {
                 x: 0,
@@ -239,8 +240,8 @@
 
             $( '<div class="'+ t.hotspotClass.substr(1)+'"></div>' )
                 .css( {
-					left: hotspot.x - ( hotspotWidth / 2 ),
-					top: hotspot.y - ( hotspotWidth / 2 ),
+                    left: hotspot.x - ( hotspotWidth / 2 ),
+                    top: hotspot.y - ( hotspotWidth / 2 ),
                     width: hotspotWidth + 'px',
                     height: hotspotWidth + 'px',
                     position: 'absolute'
@@ -280,7 +281,7 @@
         }
     };
 
-	// initialise
+    // initialise
     window.imageEdit = $.extend( window.imageEdit, hotspot );
 
 })( jQuery );
