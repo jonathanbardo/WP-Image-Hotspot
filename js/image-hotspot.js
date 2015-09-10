@@ -10,6 +10,9 @@
         open: function( attach_id ) {
             var t = window.hotspot;
 
+            // Remove button listener that might have been set before
+            $( document ).off( 'click', t.btnClass );
+
             t.btnClass             = '.imgedit-hotspot';
             t.hotspotClass         = '.hotspot';
             t.hotspotActiveClass   = 'hotspot-active';
