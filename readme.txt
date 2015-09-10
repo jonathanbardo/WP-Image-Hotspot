@@ -11,7 +11,7 @@ Image hotspot helps you control how WordPress generates the various image size i
 
 == Description ==
 
-[youtube https://youtu.be/KTyaxHRQRv0]
+https://www.youtube.com/watch?v=KTyaxHRQRv0
 
 A plugin that helps you control how WordPress generates the various image size in your site using a specific point that you want to be visible at all time no matter the image size.
 
