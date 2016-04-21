@@ -3,7 +3,7 @@
  * Plugin Name: Image Hotspot
  * Description: Set hotspot point on your uploaded image and crop accordingly.
  * Author: Jonathan Bardo
- * Version: 0.0.1
+ * Version: 0.1.0
  * Text Domain: image-hotspot
  * Domain Path: /languages
  */
@@ -115,11 +115,13 @@ class WP_Image_Hotspot {
 			wp_enqueue_script( 'wp-pointer' );
 		}
 
-		wp_enqueue_script( 'image_hotspot', IMAGE_HOTSPOT_URL . '/js/image-hotspot.js', array( 'image-edit' ), '0.2', true );
+		$suffix = SCRIPT_DEBUG ? '' : '.min';
+
+		wp_enqueue_script( 'image_hotspot', IMAGE_HOTSPOT_URL . "/js/image-hotspot{$suffix}.js", array( 'image-edit' ), '0.2', true );
 		wp_localize_script( 'image_hotspot', 'imagehotspot', $script_args );
 
 		// stylesheet
-		wp_enqueue_style( 'image_hotspot', IMAGE_HOTSPOT_URL . '/css/image-hotspot.css' );
+		wp_enqueue_style( 'image_hotspot', IMAGE_HOTSPOT_URL . "/css/image-hotspot{$suffix}.css" );
 	}
 
 	/**

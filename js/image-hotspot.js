@@ -112,10 +112,10 @@
             imageEdit.imgLoaded.apply( this, arguments );
 
             // Add new focus point button right here
-            $( '.imgedit-menu div:last' ).after( '<div class="'+t.btnClass.substr(1)+'" title="'+imagehotspot.btn_title+'"></div>' );
+            $( '.imgedit-menu button:last' ).after( '<button class="button '+t.btnClass.substr(1)+'" title="'+imagehotspot.btn_title+'"></button>' );
 
             // Proxy the inline onclick event
-            $( '.imgedit-menu div' ).not( t.btnClass ).each( function() {
+            $( '.imgedit-menu button' ).not( t.btnClass ).each( function() {
                 // Cache event
                 var existing_event = this.onclick;
 
@@ -156,7 +156,7 @@
                             .pointer( 'open' );
 
                         // Pointer don't show on media modal otherwise
-                        $( t.btnClass ).first().pointer( 'instance').pointer.css( {zIndex: 170000} );
+                        $( t.btnClass ).first().pointer( 'instance' ).pointer.css( {zIndex: 170000} );
                     }
                 }, 50 );
             }
@@ -184,9 +184,9 @@
             t.$image.css( 'cursor', 'crosshair' );
             t.$image.imgAreaSelect({ remove: true });
 
-            $('.imgedit-menu div').not( t.btnClass ).addClass( t.hotspotDisabledClass );
+            $('.imgedit-menu button').not( t.btnClass ).addClass( t.hotspotDisabledClass );
 
-            // Prevent other listener from disturbing our behavior
+            // Prevent other listenerimgedit-submit-btn from disturbing our behavior
             window.imageEdit.setDisabled = function(){ return false; };
         },
 
@@ -199,7 +199,7 @@
 
             imageEdit.initCrop( t.attach_id, t.$image, t.$image.parent() );
 
-            $( '.imgedit-menu div' ).not( t.btnClass ).removeClass( t.hotspotDisabledClass );
+            $( '.imgedit-menu button' ).not( t.btnClass ).removeClass( t.hotspotDisabledClass );
             $( '.imgedit-submit-btn' ).prop( 'disabled', true );
 
             // Restore behavior
@@ -207,6 +207,7 @@
         },
 
         hotspotToggleActivation: function() {
+
             // First show current hotspot if there is a one
             var t = window.hotspot,
                 $btn = $(this);
@@ -231,6 +232,8 @@
                     } );
                 }
             }
+
+					return false;
         },
 
         hotspotAdd: function( hotspot ) {

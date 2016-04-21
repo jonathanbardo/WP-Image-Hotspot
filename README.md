@@ -5,8 +5,8 @@
 
 **Contributors:** [jonathanbardo](http://profiles.wordpress.org/jonathanbardo)  
 **Tags:** [thumbnails](http://wordpress.org/plugins/tags/thumbnails), [image](http://wordpress.org/plugins/tags/image), [resize](http://wordpress.org/plugins/tags/resize)  
-**Requires at least:** 4.3  
-**Tested up to:** 4.3  
+**Requires at least:** 4.5  
+**Tested up to:** 4.5  
 **Stable tag:** trunk (master)
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
@@ -25,6 +25,8 @@ A plugin that helps you control how WordPress generates the various image size i
 ![Demonstration of hotspot point in image editing screen.](assets/screenshot-1.png)
 
 ## Changelog ##
-
 ### 0.1.0 ###
+Initial release
+
+### 0.0.1 ###
 Initial release

@@ -1,8 +1,8 @@
 === Image Hotspot ===
 Contributors:       jonathanbardo  
 Tags:               thumbnails, image, resize  
-Requires at least:  4.3  
-Tested up to:       4.3  
+Requires at least:  4.5  
+Tested up to:       4.5  
 Stable tag:         trunk  
 License:            GPLv2 or later  
 License URI:        http://www.gnu.org/licenses/gpl-2.0.html  
@@ -22,6 +22,8 @@ A plugin that helps you control how WordPress generates the various image size i
 1. Demonstration of hotspot point in image editing screen.
 
 == Changelog ==
+= 0.1.0 =
+Added WordPress 4.5 compatibility
 
 = 0.0.1 =
 * Initial release

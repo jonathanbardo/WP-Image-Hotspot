@@ -10,18 +10,18 @@
 }
 
 
-.imgedit-menu div.imgedit-hotspot:before {
+.imgedit-menu button.imgedit-hotspot:before {
     content: "\f159";
 }
 
-.imgedit-menu div.imgedit-hotspot.hotspot-active {
+.imgedit-menu button.imgedit-hotspot.hotspot-active {
 	border-color: #4BB000;
     background-color: #CCEAB5;
     color: #777;
     opacity: 0.5;
 }
 
-.imgedit-menu div.hotspot-disabled {
+.imgedit-menu button.hotspot-disabled {
     border-color: #CCC;
     background-color: #DDD;
     color: #777;
